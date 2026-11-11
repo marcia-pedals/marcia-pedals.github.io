@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="generator" content="Observable Framework v1.13.4">
+<title>GTFS vs GTFS-RT pre-departure timetables | Caltrain GTFS vs GTFS-RT pre-departure timetables</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&amp;display=swap" crossorigin>
+<link rel="preload" as="style" href="./_observablehq/theme-air,near-midnight.b050d634.css">
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&amp;display=swap" crossorigin>
+<link rel="stylesheet" type="text/css" href="./_observablehq/theme-air,near-midnight.b050d634.css">
+<link rel="modulepreload" href="./_observablehq/client.170aec6b.js">
+<link rel="modulepreload" href="./_observablehq/runtime.13bc3751.js">
+<link rel="modulepreload" href="./_observablehq/stdlib.8ab8c2e4.js">
+<link rel="modulepreload" href="./_import/components/feed.246303da.js">
+<link rel="modulepreload" href="./_import/components/timetable.a98ba1c6.js">
+<link rel="modulepreload" href="./_import/components/controls.43f9d8d6.js">
+<link rel="modulepreload" href="./_npm/d3@7.9.2/172963d6.js">
+<link rel="modulepreload" href="./_npm/htl@1.0.0/11521f02.js">
+<link rel="modulepreload" href="./_npm/d3-array@3.2.5/52d144d7.js">
+<link rel="modulepreload" href="./_npm/d3-axis@3.0.1/c0e5fbdf.js">
+<link rel="modulepreload" href="./_npm/d3-brush@3.0.1/321ca391.js">
+<link rel="modulepreload" href="./_npm/d3-chord@3.0.2/468a53d3.js">
+<link rel="modulepreload" href="./_npm/d3-color@3.1.1/91613843.js">
+<link rel="modulepreload" href="./_npm/d3-contour@4.0.3/8e79d948.js">
+<link rel="modulepreload" href="./_npm/d3-delaunay@6.0.6/d6c84ddb.js">
+<link rel="modulepreload" href="./_npm/d3-dispatch@3.0.2/a70bd0ef.js">
+<link rel="modulepreload" href="./_npm/d3-drag@3.0.1/47229f37.js">
+<link rel="modulepreload" href="./_npm/d3-dsv@3.0.2/4a4147a2.js">
+<link rel="modulepreload" href="./_npm/d3-ease@3.0.2/ca4f77fd.js">
+<link rel="modulepreload" href="./_npm/d3-fetch@3.0.2/eef84249.js">
+<link rel="modulepreload" href="./_npm/d3-force@3.0.1/c1b23a7b.js">
+<link rel="modulepreload" href="./_npm/d3-format@3.1.3/b1442952.js">
+<link rel="modulepreload" href="./_npm/d3-geo@3.1.2/e07dc79e.js">
+<link rel="modulepreload" href="./_npm/d3-hierarchy@3.1.3/d3b0a1aa.js">
+<link rel="modulepreload" href="./_npm/d3-interpolate@3.0.2/6de199be.js">
+<link rel="modulepreload" href="./_npm/d3-path@3.1.1/9eb769d3.js">
+<link rel="modulepreload" href="./_npm/d3-polygon@3.0.2/93595b54.js">
+<link rel="modulepreload" href="./_npm/d3-quadtree@3.0.2/80bafd54.js">
+<link rel="modulepreload" href="./_npm/d3-random@3.0.2/8bf3f736.js">
+<link rel="modulepreload" href="./_npm/d3-scale@4.0.3/d15d690b.js">
+<link rel="modulepreload" href="./_npm/d3-scale-chromatic@3.1.1/287966da.js">
+<link rel="modulepreload" href="./_npm/d3-selection@3.0.1/c4158eb5.js">
+<link rel="modulepreload" href="./_npm/d3-shape@3.2.1/a41eab18.js">
+<link rel="modulepreload" href="./_npm/d3-time@3.1.1/acaa76bc.js">
+<link rel="modulepreload" href="./_npm/d3-time-format@4.1.1/d561e9cd.js">
+<link rel="modulepreload" href="./_npm/d3-timer@3.0.2/ea7e7cf7.js">
+<link rel="modulepreload" href="./_npm/d3-transition@3.0.2/f861168f.js">
+<link rel="modulepreload" href="./_npm/d3-zoom@3.0.1/c1f09323.js">
+<script type="module">
+
+import {define} from "./_observablehq/client.170aec6b.js";
+import {registerFile} from "./_observablehq/stdlib.8ab8c2e4.js";
+
+registerFile("./data/services.json", {"name":"./data/services.json","mimeType":"application/json","path":"./_file/data/services.e38d6267.json","lastModified":1794422040943,"size":437});
+registerFile("./data/shape_stations.json", {"name":"./data/shape_stations.json","mimeType":"application/json","path":"./_file/data/shape_stations.d401034e.json","lastModified":1794422040940,"size":25167});
+registerFile("./data/stations.json", {"name":"./data/stations.json","mimeType":"application/json","path":"./_file/data/stations.cef2df7e.json","lastModified":1794422040934,"size":1612});
+registerFile("./data/timetable.json", {"name":"./data/timetable.json","mimeType":"application/json","path":"./_file/data/timetable.c63727c4.json","lastModified":1794422040952,"size":656736});
+registerFile("./data/trips.json", {"name":"./data/trips.json","mimeType":"application/json","path":"./_file/data/trips.60e5b0fb.json","lastModified":1794422040931,"size":13964});
+
+define({id: "1141e7ad", inputs: ["FileAttachment"], outputs: ["dirName","shortStationName","routeKm","timetableTable","filterBar","segmented","select","pair","timetable","trips","stations","shapeStations","services"], body: async (FileAttachment) => {
+const [{dirName, shortStationName, routeKm}, {timetableTable}, {filterBar, segmented, select, pair}] = await Promise.all([import("./_import/components/feed.246303da.js"), import("./_import/components/timetable.a98ba1c6.js"), import("./_import/components/controls.43f9d8d6.js")]);
+const timetable = (await FileAttachment("./data/timetable.json").json());
+const trips = (await FileAttachment("./data/trips.json").json());
+const stations = (await FileAttachment("./data/stations.json").json());
+const shapeStations = (await FileAttachment("./data/shape_stations.json").json());
+const services = new Map((await FileAttachment("./data/services.json").json()).map((s) => [s.service_id, s.runs]));
+return {dirName,shortStationName,routeKm,timetableTable,filterBar,segmented,select,pair,timetable,trips,stations,shapeStations,services};
+}});
+
+define({id: "1eae1df4", inputs: ["stations","shortStationName","routeKm","shapeStations","timetable","trips","dirName","d3"], outputs: ["stationName","kmFromSF","firstStop","tripList","hm","serviceTrips"], body: (stations,shortStationName,routeKm,shapeStations,timetable,trips,dirName,d3) => {
+const stationName = new Map(stations.map((s) => [s.station_id, shortStationName(s.name)]));
+const {kmFromSF} = routeKm(shapeStations);
+const firstStop = new Map(timetable.filter((r) => r.stop_idx === 0).map((r) => [r.trip_id, r]));
+const tripList = trips.filter((t) => firstStop.has(t.trip_id))
+  .map((t) => ({trip: t.trip_id, service: t.service_id, direction: dirName(t.direction_id), dep_s: firstStop.get(t.trip_id).gtfs_s}));
+const hm = (s) => `${Math.floor(s / 3600)}:${String(Math.floor(s / 60) % 60).padStart(2, "0")}`;
+const serviceTrips = d3.rollup(tripList, (v) => v.length, (r) => r.service);
+return {stationName,kmFromSF,firstStop,tripList,hm,serviceTrips};
+}});
+
+define({id: "a88083a5", inputs: ["services","d3","serviceTrips","segmented","display","filterBar","Generators"], outputs: ["runs","kind","serviceName","serviceOrder","serviceInput","directionInput","tripSlot","service","direction","picked"], body: (services,d3,serviceTrips,segmented,display,filterBar,Generators) => {
+// defaults: the southbound weekday trains 110 to 510 (110, 408, 112, 510)
+const runs = (s) => services.get(s) ?? s;
+const kind = (s) => (/^Mon–Fri/.test(runs(s)) ? 0 : /^Sat–Sun/.test(runs(s)) ? 1 : 2);
+const serviceName = (s) => ["Weekdays", "Weekends"][kind(s)]
+  ?? (runs(s).split(", ").length > 2 ? runs(s).split(", ").slice(0, 2).join(", ") + ", …" : runs(s));
+const serviceOrder = d3.sort(serviceTrips.keys(), (s) => kind(s), (s) => -serviceTrips.get(s));
+const serviceInput = segmented(serviceOrder.filter((s) => kind(s) < 2), {label: serviceName, title: runs,
+  more: serviceOrder.filter((s) => kind(s) === 2), moreLabel: "Other"});
+const directionInput = segmented(["southbound", "northbound"], {label: (d) => (d === "southbound" ? "SB" : "NB"), title: (d) => d});
+const tripSlot = document.createElement("div");  // filled with the first / last trip dropdowns below
+display(filterBar([[["Service", serviceInput], ["Direction", directionInput], ["Trips", tripSlot]]]));
+const service = Generators.input(serviceInput);
+const direction = Generators.input(directionInput);
+// the last first / last trips picked, kept when switching service or direction if they're there
+const picked = {first: "110", last: "510"};
+return {runs,kind,serviceName,serviceOrder,serviceInput,directionInput,tripSlot,service,direction,picked};
+}});
+
+define({id: "90761b15", inputs: ["d3","tripList","service","direction","hm","select","picked","tripSlot","pair","Generators"], outputs: ["candidates","options","has","firstInput","lastInput","first","last"], body: (d3,tripList,service,direction,hm,select,picked,tripSlot,pair,Generators) => {
+const candidates = d3.sort(tripList.filter((r) => r.service === service && r.direction === direction), (r) => r.dep_s);
+const options = candidates.map((r) => ({key: r.trip, label: `${r.trip} · ${hm(r.dep_s)}`}));
+const has = (t) => candidates.some((r) => r.trip === t);
+const firstInput = select(options, has(picked.first) ? picked.first : candidates[0]?.trip, "first trip");
+const lastInput = select(options, has(picked.last) ? picked.last : candidates[Math.min(3, candidates.length - 1)]?.trip, "last trip");
+tripSlot.replaceChildren(pair(firstInput, lastInput));
+const first = Generators.input(firstInput);
+const last = Generators.input(lastInput);
+return {candidates,options,has,firstInput,lastInput,first,last};
+}});
+
+define({id: "9d9eb6fe", inputs: ["picked","first","last","d3","candidates","stationName","direction","kmFromSF","display","html","timetableTable","timetable"], outputs: ["i","j","shown","lineOrder","shownSet"], body: (picked,first,last,d3,candidates,stationName,direction,kmFromSF,display,html,timetableTable,timetable) => {
+picked.first = first; picked.last = last;
+const [i, j] = d3.extent([first, last], (t) => candidates.findIndex((r) => r.trip === t));
+const shown = i == null || i < 0 ? [] : candidates.slice(i, j + 1).map((r) => r.trip);
+const lineOrder = d3.sort([...stationName], ([st]) => (direction === "southbound" ? 1 : -1) * (kmFromSF.get(st) ?? 0));
+const shownSet = new Set(shown);
+display(shown.length === 0
+  ? html`<p class="muted">No ${direction} trips in this service.</p>`
+  : timetableTable(timetable.filter((r) => shownSet.has(r.trip_id)), shown, lineOrder));
+return {i,j,shown,lineOrder,shownSet};
+}});
+
+</script>
+</head>
+<body>
+<div id="observablehq-center">
+<main id="observablehq-main" class="observablehq">
+<style>#observablehq-main h1 { max-width: none; }</style>
+<h1 id="gtfs-vs-gtfs-rt-pre-departure-timetables" tabindex="-1"><a class="observablehq-header-anchor" href="#gtfs-vs-gtfs-rt-pre-departure-timetables">GTFS vs GTFS-RT pre‑departure timetables</a></h1>
+<div class="observablehq observablehq--block"><!--:1141e7ad:--></div>
+<div class="observablehq observablehq--block"><!--:1eae1df4:--></div>
+<div class="observablehq observablehq--block"><!--:a88083a5:--></div>
+<div class="observablehq observablehq--block"><!--:90761b15:--></div>
+<div class="observablehq observablehq--block"><!--:9d9eb6fe:--></div>
+</main>
+</div>
+</body>
+</html>
